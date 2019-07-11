@@ -1,0 +1,23 @@
+package com.bolsadeideas.springboot.web.app.controllers;
+
+/*import java.util.Map; Otra clase para enviar datos a la vista*/
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+/*import org.springframework.ui.ModelMap; Otra clase para enviar datos a la vista*/ 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+/*import org.springframework.web.servlet.ModelAndView; Otra clase para enviar datos a la vista*/
+
+@Controller
+@RequestMapping("/app")
+public class IndexController {
+	
+	@GetMapping(value= {"/index", "/", "", "/home"})
+	public String index(Model model) {
+		model.addAttribute("titulo", "Este es el parametro titulo con model");		
+		return "index";
+	}
+	
+	@RequestMapping("/perfil")
+}
